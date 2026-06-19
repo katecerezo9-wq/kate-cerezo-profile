@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kate Ann H. Cerezo | Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, #fce4ec 0%, #f8bbd0 100%);
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* Two-tone pink glow background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(233, 30, 99, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(244, 143, 177, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(236, 64, 122, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* Floating two-tone particles */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(2px 2px at 20% 30%, rgba(233, 30, 99, 0.15), transparent),
+        radial-gradient(2px 2px at 40% 70%, rgba(244, 143, 177, 0.12), transparent),
+        radial-gradient(2px 2px at 60% 20%, rgba(233, 30, 99, 0.15), transparent),
+        radial-gradient(2px 2px at 80% 80%, rgba(244, 143, 177, 0.12), transparent),
+        radial-gradient(1px 1px at 10% 90%, rgba(233, 30, 99, 0.15), transparent),
+        radial-gradient(1px 1px at 90% 10%, rgba(244, 143, 177, 0.15), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(236, 64, 122, 0.10), transparent);
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatParticles 20s linear infinite;
+    }
+
+    @keyframes floatParticles {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50px, -50px); }
+    }
+
+    .card {
+      max-width: 800px;
+      width: 100%;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(252, 228, 236, 0.90));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 2.5rem;
+      padding: 2.8rem 2.5rem;
+      box-shadow: 
+        0 25px 45px -12px rgba(233, 30, 99, 0.10),
+        0 0 80px rgba(233, 30, 99, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      transition: transform 0.25s ease, box-shadow 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Two-tone gradient border */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 2.6rem;
+      background: linear-gradient(135deg, #e91e63, #f8bbd0, #e91e63, #f06292);
+      background-size: 300% 300%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      animation: borderShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes borderShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 
+        0 35px 55px -18px rgba(233, 30, 99, 0.15),
+        0 0 100px rgba(233, 30, 99, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Two-tone avatar border */
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid transparent;
+      background-image: linear-gradient(white, white), 
+                        linear-gradient(135deg, #e91e63, #f8bbd0, #e91e63);
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 
+        0 0 30px rgba(233, 30, 99, 0.15),
+        0 0 60px rgba(233, 30, 99, 0.08),
+        inset 0 0 30px rgba(233, 30, 99, 0.05);
+      margin-bottom: 1.25rem;
+      transition: transform 0.3s, box-shadow 0.4s;
+      animation: avatarGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes avatarGlow {
+      0%, 100% { box-shadow: 0 0 30px rgba(233, 30, 99, 0.15), 0 0 60px rgba(233, 30, 99, 0.08); }
+      50% { box-shadow: 0 0 50px rgba(233, 30, 99, 0.25), 0 0 80px rgba(244, 143, 177, 0.15); }
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px rgba(233, 30, 99, 0.25), 0 0 100px rgba(244, 143, 177, 0.15);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Two-tone text gradient */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.3rem;
+      text-shadow: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(233, 30, 99, 0.10), rgba(244, 143, 177, 0.15));
+      color: #ad1457;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.35rem 1.2rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(233, 30, 99, 0.15);
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.05);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(244, 143, 177, 0.08));
+      padding: 0.4rem 1.5rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      margin-top: 0.2rem;
+      border: 1px solid rgba(233, 30, 99, 0.08);
+    }
+
+    .tagline i {
+      color: #e91e63;
+    }
+
+    .intro-section {
+      background: linear-gradient(135deg, rgba(233, 30, 99, 0.04), rgba(244, 143, 177, 0.06));
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      margin: 1.2rem 0 1.8rem;
+      border: 1px solid rgba(233, 30, 99, 0.06);
+      backdrop-filter: blur(4px);
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.02rem;
+      color: #1a1a1a;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.02);
+    }
+
+    .intro-section i {
+      color: #e91e63;
+      margin: 0 4px;
+    }
+
+    .intro-section .sagittarius {
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    .intro-section .games {
+      color: #ad1457;
+      font-weight: 500;
+    }
+
+    .intro-section strong {
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* --- HOBBIES SECTION --- */
+    .hobbies-section {
+      margin: 1.5rem 0 1.8rem;
+      text-align: center;
+    }
+
+    .hobbies-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hobbies-section h3 i {
+      color: #e91e63;
+      -webkit-text-fill-color: #e91e63;
+      text-shadow: 0 0 20px rgba(233, 30, 99, 0.15);
+    }
+
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .hobby-item {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(252, 228, 236, 0.6));
+      padding: 1rem 0.8rem;
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(233, 30, 99, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.02);
+    }
+
+    .hobby-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 187, 208, 0.3));
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 40px rgba(233, 30, 99, 0.04);
+      border-color: rgba(233, 30, 99, 0.20);
+    }
+
+    .hobby-item i {
+      font-size: 2rem;
+      filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.08));
+    }
+
+    .hobby-item .hobby-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .hobby-item:nth-child(1) i { color: #e91e63; }
+    .hobby-item:nth-child(2) i { color: #ec407a; }
+    .hobby-item:nth-child(3) i { color: #d81b60; }
+    .hobby-item:nth-child(4) i { color: #f06292; }
+    .hobby-item:nth-child(5) i { color: #e91e63; }
+    .hobby-item:nth-child(6) i { color: #ec407a; }
+    .hobby-item:nth-child(7) i { color: #f48fb1; }
+    .hobby-item:nth-child(8) i { color: #e91e63; }
+
+    /* --- SKILLS SECTION --- */
+    .skills-section {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .skills-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .skills-section h3 i {
+      color: #e91e63;
+      -webkit-text-fill-color: #e91e63;
+      text-shadow: 0 0 20px rgba(233, 30, 99, 0.15);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-item {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(252, 228, 236, 0.6));
+      padding: 1rem 0.8rem;
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(233, 30, 99, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.02);
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 187, 208, 0.3));
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 40px rgba(233, 30, 99, 0.04);
+      border-color: rgba(233, 30, 99, 0.20);
+    }
+
+    .skill-item i {
+      font-size: 1.8rem;
+      color: #e91e63;
+      filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.08));
+    }
+
+    .skill-item .skill-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .skill-item .skill-desc {
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+
+    /* --- ACHIEVEMENTS SECTION --- */
+    .achievements-section {
+      margin: 1.5rem 0 1.8rem;
+      text-align: center;
+    }
+
+    .achievements-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .achievements-section h3 i {
+      color: #c2185b;
+      -webkit-text-fill-color: #c2185b;
+      text-shadow: 0 0 20px rgba(194, 24, 91, 0.15);
+    }
+
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .achievement-item {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(252, 228, 236, 0.6));
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(233, 30, 99, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.02);
+    }
+
+    .achievement-item:hover {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 187, 208, 0.3));
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 40px rgba(233, 30, 99, 0.04);
+      border-color: rgba(233, 30, 99, 0.20);
+      transform: translateX(5px);
+    }
+
+    .achievement-item i {
+      font-size: 1.5rem;
+      min-width: 35px;
+      text-align: center;
+      filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.08));
+    }
+
+    .achievement-item .achievement-text {
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    .achievement-item:nth-child(1) i { color: #e91e63; }
+    .achievement-item:nth-child(2) i { color: #ec407a; }
+    .achievement-item:nth-child(3) i { color: #f06292; }
+    .achievement-item:nth-child(4) i { color: #c2185b; }
+
+    /* --- BLOG SECTION --- */
+    .blog-section {
+      margin: 1.5rem 0 1.8rem;
+      text-align: center;
+    }
+
+    .blog-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .blog-section h3 i {
+      color: #e91e63;
+      -webkit-text-fill-color: #e91e63;
+      text-shadow: 0 0 20px rgba(233, 30, 99, 0.12);
+    }
+
+    .blog-card {
+      background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(244, 143, 177, 0.08));
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.02);
+      position: relative;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #e91e63, #f8bbd0, #e91e63);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .blog-card:hover::before {
+      opacity: 1;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 50px rgba(233, 30, 99, 0.04);
+    }
+
+    .blog-card i {
+      font-size: 2.5rem;
+      color: #e91e63;
+      filter: drop-shadow(0 0 20px rgba(233, 30, 99, 0.10));
+    }
+
+    .blog-card .blog-info {
+      text-align: left;
+    }
+
+    .blog-card .blog-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .blog-card .blog-desc {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .blog-card .blog-link {
+      display: inline-block;
+      background: linear-gradient(135deg, #e91e63, #c2185b);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(233, 30, 99, 0.20);
+    }
+
+    .blog-card .blog-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px rgba(233, 30, 99, 0.30), 0 0 50px rgba(233, 30, 99, 0.08);
+      background: linear-gradient(135deg, #ec407a, #c2185b);
+    }
+
+    .blog-card .blog-link i {
+      font-size: 0.9rem;
+      color: white;
+      margin-left: 6px;
+    }
+
+    /* --- CAT SECTION --- */
+    .cat-section {
+      margin: 1.8rem 0 1.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(233, 30, 99, 0.03), rgba(244, 143, 177, 0.05));
+      padding: 1.5rem;
+      border-radius: 25px;
+      border: 2px dashed rgba(233, 30, 99, 0.08);
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.02);
+    }
+
+    .cat-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cat-section h3 i {
+      color: #e91e63;
+      -webkit-text-fill-color: #e91e63;
+      margin-right: 10px;
+      text-shadow: 0 0 20px rgba(233, 30, 99, 0.10);
+    }
+
+    .cat-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.8rem;
+      border: 4px solid transparent;
+      background-image: linear-gradient(white, white), 
+                        linear-gradient(135deg, #e91e63, #f8bbd0, #e91e63);
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 50px rgba(233, 30, 99, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.4s;
+      animation: catGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes catGlow {
+      0%, 100% { box-shadow: 0 8px 30px rgba(233, 30, 99, 0.10), 0 0 50px rgba(233, 30, 99, 0.04); }
+      50% { box-shadow: 0 8px 40px rgba(233, 30, 99, 0.18), 0 0 70px rgba(244, 143, 177, 0.10); }
+    }
+
+    .cat-image:hover {
+      transform: scale(1.05) rotate(-3deg);
+      box-shadow: 0 12px 50px rgba(233, 30, 99, 0.18), 0 0 80px rgba(244, 143, 177, 0.10);
+    }
+
+    .cat-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cat-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #880e4f, #e91e63);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+
+    .cat-name i {
+      font-size: 1rem;
+      margin: 0 4px;
+    }
+
+    .cat-name .fa-heart {
+      color: #e91e63;
+      -webkit-text-fill-color: #e91e63;
+      filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.15));
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #e91e63, #f8bbd0, #e91e63);
+      border-radius: 10px;
+      margin: 1.5rem auto 1.8rem;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.10);
+    }
+
+    .info-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 1.8rem 0 0rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(252, 228, 236, 0.6));
+      padding: 0.9rem 1.5rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(233, 30, 99, 0.06);
+      transition: all 0.2s ease;
+      font-size: 1.05rem;
+      box-shadow: 0 0 20px rgba(233, 30, 99, 0.02);
+    }
+
+    .info-item:hover {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 187, 208, 0.3));
+      border-color: rgba(233, 30, 99, 0.15);
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.04);
+    }
+
+    .info-item i {
+      width: 28px;
+      color: #e91e63;
+      font-size: 1.3rem;
+      text-align: center;
+      filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.06));
+    }
+
+    .info-item .label {
+      font-weight: 500;
+      color: #6b7280;
+      min-width: 80px;
+    }
+
+    .info-item .value {
+      color: #1a1a1a;
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .info-item .value a {
+      color: #ad1457;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dotted rgba(233, 30, 99, 0.20);
+      transition: all 0.2s;
+    }
+
+    .info-item .value a:hover {
+      color: #880e4f;
+      border-bottom: 2px solid #e91e63;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .intro-section {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      .hobbies-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.7rem;
+      }
+      .hobby-item {
+        padding: 0.8rem 0.5rem;
+      }
+      .hobby-item i {
+        font-size: 1.3rem;
+      }
+      .hobby-item .hobby-label {
+        font-size: 0.65rem;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+      }
+      .skill-item {
+        padding: 0.8rem 0.5rem;
+      }
+      .skill-item i {
+        font-size: 1.5rem;
+      }
+      .skill-item .skill-label {
+        font-size: 0.75rem;
+      }
+      .achievement-item {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+      }
+      .achievement-item i {
+        font-size: 1.2rem;
+        min-width: 25px;
+      }
+      .blog-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+      .blog-card .blog-info {
+        text-align: center;
+      }
+      .blog-card i {
+        font-size: 2rem;
+      }
+      .blog-card .blog-link {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+      }
+      .cat-image {
+        width: 150px;
+        height: 150px;
+      }
+      .info-item {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        padding: 0.7rem 1.2rem;
+        border-radius: 30px;
+      }
+      .info-item .label {
+        min-width: 60px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="profile-header">
+    <div class="avatar">
+      <img src="photo.jpg" alt="Kate Ann Cerezo" />
+    </div>
+    <h1>Kate Ann H. Cerezo</h1>
+    <span class="badge"><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>BSCS · 4th Year</span>
+    <div class="tagline">
+      <i class="fas fa-map-pin" style="margin-right: 8px;"></i>San Miguel, Agoo, La Union
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INTRODUCTION -->
+  <div class="intro-section">
+    <i class="fas fa-quote-left" style="font-size: 1.5rem; opacity: 0.3;"></i>
+    <p>
+      Hi! I have a natural eye and talent for <strong>designing visual experiences</strong> 
+      and keeping things creative. As a certified <span class="sagittarius">♐ Sagittarius</span>, 
+      I am always driven by exploration and adventures.
+    </p>
+    <p style="margin-top: 10px;">
+      Whenever I'm bored, you will find me playing any 
+      <span class="games"><i class="fas fa-gamepad"></i> online games</span>!
+    </p>
+    <i class="fas fa-quote-right" style="font-size: 1.5rem; opacity: 0.3; display: block; margin-top: 5px;"></i>
+  </div>
+
+  <!-- HOBBIES -->
+  <div class="hobbies-section">
+    <h3><i class="fas fa-star"></i> My Hobbies <i class="fas fa-star"></i></h3>
+    <div class="hobbies-grid">
+      <div class="hobby-item">
+        <i class="fas fa-gamepad"></i>
+        <span class="hobby-label">Online Games</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-film"></i>
+        <span class="hobby-label">K-Drama</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-tv"></i>
+        <span class="hobby-label">C-Drama</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-paint-brush"></i>
+        <span class="hobby-label">Painting</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-compass"></i>
+        <span class="hobby-label">Exploring</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-mountain"></i>
+        <span class="hobby-label">Adventures</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-birthday-cake"></i>
+        <span class="hobby-label">Baking</span>
+      </div>
+      <div class="hobby-item">
+        <i class="fas fa-utensils"></i>
+        <span class="hobby-label">Cooking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="skills-section">
+    <h3><i class="fas fa-crown"></i> My Skills <i class="fas fa-crown"></i></h3>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <i class="fas fa-tasks"></i>
+        <span class="skill-label">Organizational</span>
+        <span class="skill-desc">Planning & organizing</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-clock"></i>
+        <span class="skill-label">Time Management</span>
+        <span class="skill-desc">Prioritizing tasks</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-html5"></i>
+        <span class="skill-label">HTML/CSS</span>
+        <span class="skill-desc">Basic web design</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-palette"></i>
+        <span class="skill-label">Graphical & Asset</span>
+        <span class="skill-desc">Visual content creation</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-database"></i>
+        <span class="skill-label">Data Encoding</span>
+        <span class="skill-desc">Data entry & management</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="achievements-section">
+    <h3><i class="fas fa-trophy"></i> My Achievements <i class="fas fa-trophy"></i></h3>
+    <div class="achievement-list">
+      <div class="achievement-item">
+        <i class="fas fa-certificate"></i>
+        <span class="achievement-text">🌐 Cisco Networking Certificate - Introduction to Networks</span>
+      </div>
+      <div class="achievement-item">
+        <i class="fas fa-certificate"></i>
+        <span class="achievement-text">📊 Introduction to Data Science - Completion Certificate</span>
+      </div>
+      <div class="achievement-item">
+        <i class="fas fa-certificate"></i>
+        <span class="achievement-text">🐍 Python Essentials 1 - Cisco Networking Academy</span>
+      </div>
+      <div class="achievement-item">
+        <i class="fas fa-trophy"></i>
+        <span class="achievement-text">🏅 SCUAA 2026 - 4th Place (MOBA Women Category)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG SECTION -->
+  <div class="blog-section">
+    <h3><i class="fas fa-blog"></i> My Blog <i class="fas fa-blog"></i></h3>
+    <div class="blog-card">
+      <i class="fas fa-pen-fancy"></i>
+      <div class="blog-info">
+        <div class="blog-name">Kate Ann | TheFolio</div>
+        <div class="blog-desc">My personal blog where I share my thoughts, experiences, and creative works.</div>
+      </div>
+      <a href="https://thefolio-beta.vercel.app/" target="_blank" class="blog-link">
+        Visit Blog <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- CAT SECTION -->
+  <div class="cat-section">
+    <h3><i class="fas fa-paw"></i> Meet My Cat</h3>
+    <div class="cat-image">
+      <img src="bluey.jpg" alt="Bluey the Cat" />
+    </div>
+    <div class="cat-name">
+      <i class="fas fa-cat"></i> Bluey <i class="fas fa-heart"></i>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INFO GRID -->
+  <div class="info-grid">
+    <div class="info-item">
+      <i class="fas fa-envelope"></i>
+      <span class="label">Email</span>
+      <span class="value"><a href="mailto:katecerezo9@gmail.com">katecerezo9@gmail.com</a></span>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <span class="label">Location</span>
+      <span class="value">San Miguel, Agoo, La Union, PH</span>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-code"></i>
+      <span class="label">Student</span>
+      <span class="value">Bachelor of Science in Computer Science</span>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-calendar-alt"></i>
+      <span class="label">Year Level</span>
+      <span class="value">4th Year · graduating soon</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
